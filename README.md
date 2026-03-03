@@ -59,7 +59,7 @@ Key highlights:
 - Dynamic filtering and drill-down capabilities
 - Business-focused analytical storytelling
 
-Technologies: Tableau, SQL, Data Modelling
+Technologies: Tableau
 
 ---
 
