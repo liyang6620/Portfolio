@@ -69,10 +69,8 @@ I am particularly interested in roles involving:
 
 - Data Engineering
 - Cloud-based Data Platforms
-- Analytics Engineering
+- Data Analytics
 - Applied Machine Learning
-
-This portfolio reflects my commitment to building scalable, data-driven systems rather than isolated academic exercises.
 
 ---
 
