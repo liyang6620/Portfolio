@@ -1,5 +1,7 @@
 # Yang Li | Technical Portfolio
 
+[![CI](https://github.com/liyang6620/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/liyang6620/Portfolio/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Master of Information Technology student with a background in Information Technology and Data Science. I build production-style software and data products spanning full-stack development, AI-assisted workflows, cloud data engineering, machine learning and business intelligence.
 
 My projects focus on practical business problems, explainable outputs and deployable systems rather than isolated notebooks.
@@ -105,4 +107,4 @@ Technologies: Tableau, Stats NZ data, dashboard storytelling
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/yang-li-3613a6294/)
-- Email: yil195@aucklanduni.ac.nz
+- [Email](mailto:yil195@aucklanduni.ac.nz)
