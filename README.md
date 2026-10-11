@@ -1,80 +1,108 @@
-# Yang Li – Technical Portfolio
+# Yang Li | Technical Portfolio
 
-Welcome to my professional portfolio repository.  
+Master of Information Technology student with a background in Information Technology and Data Science. I build production-style software and data products spanning full-stack development, AI-assisted workflows, cloud data engineering, machine learning and business intelligence.
 
-I am a Master of Information Technology student with a dual academic background in Information Technology and Data Science. This portfolio showcases hands-on projects across data engineering, analytics, machine learning and cloud-based data platforms.
+My projects focus on practical business problems, explainable outputs and deployable systems rather than isolated notebooks.
 
-My work focuses on building practical, production-style data solutions aligned with real-world New Zealand business contexts.
+## Technical Focus
 
----
+- Full-stack product development: React, TypeScript, Python, FastAPI, ASP.NET Core
+- Data engineering and cloud: AWS S3, Glue, Athena, EventBridge, PostgreSQL, ETL
+- Applied AI and analytics: OpenAI APIs, RAG, Pandas, Scikit-learn, XGBoost
+- Visualisation and BI: ECharts, React Flow, Power BI, Tableau, Excel, Streamlit
+- Delivery and quality: Docker, GitHub Actions, Playwright, Pytest, Cloudflare Pages, Render
 
-## Core Technical Areas
+## Featured Products
 
-- Data Engineering (AWS-based pipelines, ETL workflows, automation)
-- Cloud Data Platforms (S3, Glue, Athena, Event-driven processing)
-- Big Data Processing (PySpark)
-- Machine Learning & Predictive Modelling (Scikit-learn, XGBoost)
-- Business Intelligence & Dashboard Development (Power BI, Tableau)
-- AI Evaluation & Model Quality Support
+### CareerSignal Tech NZ
 
----
+[Live web app](https://career-signal-tech-nz.pages.dev) | [Source code](https://github.com/liyang6620/career-signal-tech-nz) | [Android APK builds](https://github.com/liyang6620/career-signal-tech-nz/actions/workflows/android-apk.yml)
 
-## Featured Projects
+An evidence-based career intelligence platform for New Zealand technology job seekers. CareerSignal turns CVs, public GitHub repositories and job advertisements into reviewable capability evidence, role comparisons and career pathways.
 
-### 1. NZ Migration Data Pipeline (AWS)
+Key work:
 
-Designed and implemented a serverless data pipeline to process official monthly migration releases from Statistics New Zealand.
+- Built a complete authenticated workflow covering evidence ingestion, market exploration, role decoding, capability profiling, pathways and application tracking.
+- Implemented deterministic, inspectable scoring that separates candidate evidence strength, extraction confidence and job requirement intensity.
+- Added private PDF/DOCX processing, conservative GitHub evidence extraction, user confirmation and cited employer-evidence retrieval.
+- Delivered the same React product as a responsive web app, installable PWA and Capacitor Android APK.
+- Deployed with Cloudflare Pages, Render, Supabase and Resend; automated frontend, backend, browser and Android builds through GitHub Actions.
 
-Key highlights:
-- Automated ETL workflows using AWS Glue
-- Event-driven pipeline triggering via Amazon EventBridge
-- Partitioned Parquet data architecture for efficient querying
-- Athena-based reporting layer with structured data validation
+Technologies: React 19, TypeScript, FastAPI, PostgreSQL, pgvector, SQLAlchemy, ECharts, React Flow, Docker, Capacitor
 
-Technologies: AWS S3, Glue, Athena, EventBridge, Python
+### AI Football Transfer Platform
 
----
+[Live demo](https://ai-football-transfer-platform.pages.dev) | [Source code](https://github.com/liyang6620/AI-Football-Transfer-Platform) | [API](https://football-transfer-api.onrender.com)
 
-### 2. NZ Telecom Churn Simulation (Machine Learning)
+A full-stack transfer intelligence platform that collects football news, extracts structured transfer data with an LLM and presents searchable results through a responsive dashboard.
 
-Developed a churn risk scoring model using XGBoost within a simulated New Zealand telecom market context.
+Key work:
 
-Key highlights:
-- Feature engineering and leakage control
-- Lift-based performance evaluation
-- Risk concentration analysis for prioritised retention strategy
-- Deployment via Streamlit for interactive simulation
+- Built scheduled ingestion from BBC Sport, The Guardian and Google News feeds with article extraction and duplicate prevention.
+- Structured player, club, transfer type, fee, confidence and summary data from unstructured articles.
+- Developed an ASP.NET Core REST API, PostgreSQL persistence and React dashboard with category filtering and search.
+- Deployed the frontend and API as a working public demonstration.
 
-Technologies: Python, Pandas, Scikit-learn, XGBoost
+Technologies: React, ASP.NET Core, PostgreSQL, OpenAI API, background services, REST APIs
 
----
+## Data, AI and BI Projects
 
-### 3. NZ Border Movements Analytics Dashboard (Tableau)
+### AI Data Analysis Workspace
 
-Built an interactive dashboard analysing pre-COVID, COVID and post-COVID recovery patterns in New Zealand border movements.
+[Live demo](https://ai-data-analysis-workspace-j8qcctkchziuqghezkaxjm.streamlit.app/) | [Source code](https://github.com/liyang6620/ai-data-analysis-workspace)
 
-Key highlights:
-- Multi-year dataset modelling
-- Custom KPI development (net migration, recovery index)
-- Dynamic filtering and drill-down capabilities
-- Business-focused analytical storytelling
+An AI-assisted workspace for CSV exploration, data-quality checks, natural-language analysis, chart generation, chart explanations and downloadable reports.
 
-Technologies: Tableau
+Technologies: Python, Streamlit, OpenAI API, Pandas, NumPy, Matplotlib
 
----
+### NZ Migration Data Pipeline
 
-## Professional Focus
+[Source code](https://github.com/liyang6620/nz-migration-data-pipeline-aws)
 
-I am particularly interested in roles involving:
+A production-style serverless pipeline that processes official monthly Stats NZ migration releases into validated, partitioned Parquet datasets and an Athena reporting layer.
 
-- Data Engineering
-- Cloud-based Data Platforms
-- Data Analytics
-- Applied Machine Learning
+Technologies: AWS S3, Glue, Athena, EventBridge, Python, Parquet
 
----
+### NZ Telecom Churn Simulation
+
+[Source code](https://github.com/liyang6620/nz-telecom-churn-ml-simulation)
+
+An applied machine-learning simulation focused on leakage control, churn-risk scoring, lift-based evaluation and retention prioritisation in a New Zealand telecom context.
+
+Technologies: Python, Pandas, Scikit-learn, XGBoost, Streamlit
+
+### Retail Commercial Performance Dashboard
+
+[Source code](https://github.com/liyang6620/retail-commercial-performance-dashboard)
+
+An interactive executive dashboard for sales, profitability, regional performance, discount effectiveness, Pareto analysis and margin monitoring.
+
+Technologies: Excel, Power Query, PivotTables, PivotCharts, commercial analytics
+
+### Hotel Booking Cancellation Analytics
+
+[Source code](https://github.com/liyang6620/hotel-booking-cancellation-analytics)
+
+A business analytics and predictive-modelling study of hotel cancellation behaviour, combining exploratory analysis, operational interpretation and model comparison.
+
+Technologies: Python, Pandas, Scikit-learn, XGBoost, business analytics
+
+### NZ Border Movements Dashboard
+
+[Source code](https://github.com/liyang6620/nz-border-movements-tableau)
+
+An interactive Tableau analysis of pre-COVID, COVID and post-COVID New Zealand border-movement patterns, including recovery indicators and drill-down filters.
+
+Technologies: Tableau, Stats NZ data, dashboard storytelling
+
+## Current Interests
+
+- Data engineering and cloud data platforms
+- Full-stack software and AI-enabled products
+- Data analytics and business intelligence
+- Applied machine learning and explainable decision support
 
 ## Contact
 
-LinkedIn: https://www.linkedin.com/in/yang-li-3613a6294/  
-Email: yil195@aucklanduni.ac.nz  
+- [LinkedIn](https://www.linkedin.com/in/yang-li-3613a6294/)
+- Email: yil195@aucklanduni.ac.nz
