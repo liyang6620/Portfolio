@@ -10,10 +10,22 @@ permissions:
 
 jobs:
   documentation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version: "22"
+      - name: Validate portfolio assets
+        run: |
+          for asset in \
+            assets/aws-migration-validation.png \
+            assets/career-signal.png \
+            assets/telecom-churn-model-comparison.png \
+            assets/border-movements-dashboard.png \
+            assets/hotel-cancellation-model-comparison.png \
+            assets/ai-analysis-workspace.png \
+            assets/football-transfer-platform.png; do
+            test -s "$asset"
+          done
       - run: npx --yes markdownlint-cli2@0.20.0 README.md CONTRIBUTING.md SECURITY.md

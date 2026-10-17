@@ -1,108 +1,219 @@
 # Yang Li | Technical Portfolio
 
-[![CI](https://github.com/liyang6620/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/liyang6620/Portfolio/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/liyang6620/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/liyang6620/Portfolio/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Master of Information Technology student with a background in Information Technology and Data Science. I build production-style software and data products spanning full-stack development, AI-assisted workflows, cloud data engineering, machine learning and business intelligence.
+Master of Information Technology candidate based in Auckland, New Zealand. I
+build data products and production-shaped software across AWS data engineering,
+applied machine learning, full-stack AI applications, and business intelligence.
 
-My projects focus on practical business problems, explainable outputs and deployable systems rather than isolated notebooks.
+This portfolio contains seven curated projects with working deployments,
+reproducible evaluation evidence, or published analytical artifacts. The focus
+is on reliable data flow, explicit decision logic, honest validation, and
+maintainable delivery rather than isolated notebooks or unverified prototypes.
 
-## Technical Focus
+## Technical focus
 
-- Full-stack product development: React, TypeScript, Python, FastAPI, ASP.NET Core
-- Data engineering and cloud: AWS S3, Glue, Athena, EventBridge, PostgreSQL, ETL
-- Applied AI and analytics: OpenAI APIs, RAG, Pandas, Scikit-learn, XGBoost
-- Visualisation and BI: ECharts, React Flow, Power BI, Tableau, Excel, Streamlit
-- Delivery and quality: Docker, GitHub Actions, Playwright, Pytest, Cloudflare Pages, Render
+- **Data engineering:** AWS S3, EventBridge, SQS FIFO, EventBridge Pipes, Step
+  Functions, Glue 5.0, DynamoDB, Athena, Lake Formation, Parquet, Terraform
+- **Software and AI products:** React, TypeScript, Python, FastAPI, ASP.NET Core,
+  PostgreSQL, pgvector, OpenAI APIs, Docker
+- **Machine learning:** scikit-learn, XGBoost, temporal validation, probability
+  calibration, SHAP, leakage control, reproducible inference
+- **Analytics and BI:** Tableau, Streamlit, Pandas, Matplotlib, ECharts,
+  metric governance and dashboard storytelling
+- **Engineering quality:** GitHub Actions, Pytest, Ruff, Playwright, data
+  contracts, security policies, model cards and operational runbooks
 
-## Featured Products
+## Portfolio map
+
+| Project | Primary evidence | Status |
+| --- | --- | --- |
+| [NZ Migration Data Product](#nz-migration-data-product-on-aws) | AWS-native data engineering | Deployed and validated |
+| [CareerSignal Tech NZ](#careersignal-tech-nz) | Full-stack AI product engineering | Interview-demo beta |
+| [NZ Telecom Churn ML](#nz-telecom-churn-ml) | Reproducible classification and decision policy | Stable v2 baseline |
+| [NZ Border Movement Monitor](#new-zealand-border-movement-monitor) | Tableau BI and metric governance | Published dashboard |
+| [Hotel Cancellation Risk ML](#hotel-cancellation-risk-ml) | Temporal validation and drift analysis | Stable v2 baseline |
+| [AI Data Analysis Workspace](#ai-data-analysis-workspace) | Guarded natural-language analytics | Stable v1 demo |
+| [AI Football Transfer Platform](#ai-football-transfer-platform) | Full-stack LLM extraction pipeline | Deployed demo |
+
+## Flagship work
+
+### NZ Migration Data Product on AWS
+
+[Source code](https://github.com/liyang6620/nz-migration-data-pipeline-aws) |
+[Deployment evidence](https://github.com/liyang6620/nz-migration-data-pipeline-aws/blob/main/docs/deployment_evidence.md) |
+[Five-minute demo guide](https://github.com/liyang6620/nz-migration-data-pipeline-aws/blob/main/docs/interview_demo.md)
+
+An upload-driven AWS data product for official Stats NZ migration releases. It
+preserves immutable source versions, validates and transforms the complete
+statistical cube, detects revisions, publishes partitioned Parquet atomically,
+and exposes only committed snapshots through governed Athena Gold views.
+
+- Built the production path entirely inside AWS: S3, EventBridge, SQS FIFO,
+  EventBridge Pipes, Step Functions, DynamoDB, Glue, Athena and Lake Formation.
+- Implemented version-aware idempotency, a dataset publication lock, quality
+  gates, quarantine, replay, audit evidence, DLQ recovery and SNS alerts.
+- Processed two complete releases; the latest committed snapshot contains
+  **358,233** facts and identified **24,279** revised historical facts.
+- Verified a **196-second** Glue run, two passing quality records and zero
+  Terraform drift while maintaining a US$3 monthly budget alert boundary.
+
+**Technologies:** AWS Glue 5.0, PySpark, S3, Step Functions, Athena, Lake
+Formation, DynamoDB, Terraform, Parquet, Python
+
+![Sanitised production validation for the AWS migration data product](assets/aws-migration-validation.png)
 
 ### CareerSignal Tech NZ
 
-[Live web app](https://career-signal-tech-nz.pages.dev) | [Source code](https://github.com/liyang6620/career-signal-tech-nz) | [Android APK builds](https://github.com/liyang6620/career-signal-tech-nz/actions/workflows/android-apk.yml)
+[Live web app](https://career-signal-tech-nz.pages.dev) |
+[Source code](https://github.com/liyang6620/career-signal-tech-nz) |
+[Android builds](https://github.com/liyang6620/career-signal-tech-nz/actions/workflows/android-apk.yml)
 
-An evidence-based career intelligence platform for New Zealand technology job seekers. CareerSignal turns CVs, public GitHub repositories and job advertisements into reviewable capability evidence, role comparisons and career pathways.
+An evidence-based career intelligence platform for New Zealand technology job
+seekers. It turns CVs, public GitHub repositories, governed job records and job
+advertisements into reviewable capability evidence, role comparisons, career
+pathways and a persistent application workflow.
 
-Key work:
+- Built an authenticated product journey spanning evidence ingestion, market
+  exploration, job decoding, capability profiling, pathways and applications.
+- Kept evidence maturity, extraction confidence, source corroboration, market
+  frequency and job priority as separate, inspectable signals.
+- Added conservative PDF/DOCX and GitHub evidence extraction with user review,
+  cited employer evidence, durable processing state and application history.
+- Shipped the React client as a responsive web app, installable PWA and
+  Capacitor Android APK backed by FastAPI and PostgreSQL.
 
-- Built a complete authenticated workflow covering evidence ingestion, market exploration, role decoding, capability profiling, pathways and application tracking.
-- Implemented deterministic, inspectable scoring that separates candidate evidence strength, extraction confidence and job requirement intensity.
-- Added private PDF/DOCX processing, conservative GitHub evidence extraction, user confirmation and cited employer-evidence retrieval.
-- Delivered the same React product as a responsive web app, installable PWA and Capacitor Android APK.
-- Deployed with Cloudflare Pages, Render, Supabase and Resend; automated frontend, backend, browser and Android builds through GitHub Actions.
+**Technologies:** React 19, TypeScript, FastAPI, PostgreSQL, pgvector,
+SQLAlchemy, ECharts, React Flow, Docker, Capacitor
 
-Technologies: React 19, TypeScript, FastAPI, PostgreSQL, pgvector, SQLAlchemy, ECharts, React Flow, Docker, Capacitor
+![CareerSignal Tech NZ public product experience](assets/career-signal.png)
 
-### AI Football Transfer Platform
+### NZ Telecom Churn ML
 
-[Live demo](https://ai-football-transfer-platform.pages.dev) | [Source code](https://github.com/liyang6620/AI-Football-Transfer-Platform) | [API](https://football-transfer-api.onrender.com)
+[Live model workbench](https://nz-telecom-churn-ml-simulation-8murruu2syd4x2wry5ikcd.streamlit.app/) |
+[Source code](https://github.com/liyang6620/nz-telecom-churn-ml-simulation) |
+[Model card](https://github.com/liyang6620/nz-telecom-churn-ml-simulation/blob/main/docs/MODEL_CARD.md)
 
-A full-stack transfer intelligence platform that collects football news, extracts structured transfer data with an LLM and presents searchable results through a responsive dashboard.
+An end-to-end binary-classification study built around credible ML evidence.
+The project separates the model-development process from the downstream
+retention demonstration and makes every published result reproducible.
 
-Key work:
+- Used isolated train, validation and untouched test sets with five-fold model
+  comparison, Platt calibration and validation-only threshold selection.
+- Achieved test ROC-AUC **0.9574**, PR-AUC **0.9181** and Brier score **0.0645**
+  with bootstrap confidence intervals and an explicit cost-sensitive policy.
+- Audited leakage, persisted the split and inference contracts, and used SHAP
+  for model interpretation without making causal claims.
+- Rebuilds models, calibration, reports and figures through one tested command.
 
-- Built scheduled ingestion from BBC Sport, The Guardian and Google News feeds with article extraction and duplicate prevention.
-- Structured player, club, transfer type, fee, confidence and summary data from unstructured articles.
-- Developed an ASP.NET Core REST API, PostgreSQL persistence and React dashboard with category filtering and search.
-- Deployed the frontend and API as a working public demonstration.
+**Technologies:** Python, XGBoost, scikit-learn, SHAP, Pandas, Streamlit,
+Pytest, GitHub Actions
 
-Technologies: React, ASP.NET Core, PostgreSQL, OpenAI API, background services, REST APIs
+![Cross-validated churn model comparison](assets/telecom-churn-model-comparison.png)
 
-## Data, AI and BI Projects
+### New Zealand Border Movement Monitor
+
+[Live Tableau dashboard](https://public.tableau.com/app/profile/yang.li7346/viz/nz-border-movements/NewZealandBorderMovementRecoveryMonitor) |
+[Source and workbook](https://github.com/liyang6620/nz-border-movements-tableau) |
+[Validation evidence](https://github.com/liyang6620/nz-border-movements-tableau/blob/main/docs/VALIDATION.md)
+
+An interactive Tableau BI project monitoring New Zealand traveller movements
+across the pre-COVID, restriction and recovery periods.
+
+- Analyses **2.22 million** aggregated rows representing **60.87 million**
+  movements, with comparable January-November periods and partial-month guards.
+- Uses filter-aware KPI cards, desktop and phone layouts, drill-down views and
+  explicit definitions for recovery, air share and net traveller movements.
+- Avoids unsupported tourism, residence, labour-market and net-migration claims.
+- Includes the packaged workbook, Hyper extract integrity tests, metric
+  definitions, release screenshots and CI validation.
+
+**Technologies:** Tableau, Hyper API, Python, Stats NZ data, GitHub Actions
+
+![Published New Zealand border movement dashboard](assets/border-movements-dashboard.png)
+
+## Additional selected work
+
+### Hotel Cancellation Risk ML
+
+[Source code](https://github.com/liyang6620/hotel-booking-cancellation-analytics) |
+[Model card](https://github.com/liyang6620/hotel-booking-cancellation-analytics/blob/main/docs/MODEL_CARD.md)
+
+An end-to-end cancellation-risk system evaluated at booking creation time. It
+replaces an optimistic random-split experiment with duplicate removal,
+expanding-window model selection, chronological validation and untouched
+future-period testing.
+
+- Test ROC-AUC **0.832**, PR-AUC **0.672** and calibrated Brier score **0.159**
+  on 31,692 bookings from January-August 2017.
+- Documents post-booking leakage exclusions, a cost-aware operating threshold,
+  bootstrap intervals, SHAP interpretation and observed temporal degradation.
+- Reproduces the preprocessor, model, calibrator, figures, tables and scoring
+  contract through a tested training pipeline.
+
+**Technologies:** Python, XGBoost, scikit-learn, SHAP, Pandas, Jupyter, Pytest
+
+![Temporal hotel cancellation model comparison](assets/hotel-cancellation-model-comparison.png)
 
 ### AI Data Analysis Workspace
 
-[Live demo](https://ai-data-analysis-workspace-j8qcctkchziuqghezkaxjm.streamlit.app/) | [Source code](https://github.com/liyang6620/ai-data-analysis-workspace)
+[Live demo](https://ai-data-analysis-workspace-j8qcctkchziuqghezkaxjm.streamlit.app/) |
+[Source code](https://github.com/liyang6620/ai-data-analysis-workspace)
 
-An AI-assisted workspace for CSV exploration, data-quality checks, natural-language analysis, chart generation, chart explanations and downloadable reports.
+A local-first Streamlit workspace for CSV profiling, data-quality checks,
+deterministic insights, natural-language analysis, direct chart rendering and
+downloadable reporting.
 
-Technologies: Python, Streamlit, OpenAI API, Pandas, NumPy, Matplotlib
+- Manual analysis and the included demo dataset work without an API key.
+- AI requests receive bounded dataset context rather than an unrestricted file.
+- Chart generation uses a validated JSON specification and repository-owned
+  rendering functions; model-generated Python is never executed.
+- Supports guarded filters, aggregation, chart limits and clear rejection of
+  unsupported joins, maps, forecasting, 3D output and custom dashboards.
 
-### NZ Migration Data Pipeline
+**Technologies:** Python, Streamlit, OpenAI Responses API, Pandas, NumPy,
+Matplotlib, Pytest, Ruff
 
-[Source code](https://github.com/liyang6620/nz-migration-data-pipeline-aws)
+![AI-generated chart rendered from a validated specification](assets/ai-analysis-workspace.png)
 
-A production-style serverless pipeline that processes official monthly Stats NZ migration releases into validated, partitioned Parquet datasets and an Athena reporting layer.
+### AI Football Transfer Platform
 
-Technologies: AWS S3, Glue, Athena, EventBridge, Python, Parquet
+[Live demo](https://ai-football-transfer-platform.pages.dev) |
+[Source code](https://github.com/liyang6620/AI-Football-Transfer-Platform) |
+[API data](https://football-transfer-api.onrender.com/api/transfers)
 
-### NZ Telecom Churn Simulation
+A deployed full-stack application that collects football news, extracts
+structured transfer information with an LLM and exposes searchable transfer
+records through a responsive dashboard.
 
-[Source code](https://github.com/liyang6620/nz-telecom-churn-ml-simulation)
+- Collects BBC Sport, The Guardian and Google News feeds with article retrieval,
+  duplicate prevention and fault isolation between sources.
+- Validates model-produced player, club, transfer type, fee, currency,
+  confidence and summary fields before PostgreSQL persistence.
+- Separates public read endpoints from API-key-protected crawling, reprocessing
+  and mutation operations.
+- Deploys the React frontend, ASP.NET Core API and Supabase PostgreSQL database
+  as a working interview demonstration.
 
-An applied machine-learning simulation focused on leakage control, churn-risk scoring, lift-based evaluation and retention prioritisation in a New Zealand telecom context.
+**Technologies:** React, ASP.NET Core 10, Entity Framework Core, PostgreSQL,
+OpenAI API, RSS ingestion, REST APIs, Cloudflare Pages, Render
 
-Technologies: Python, Pandas, Scikit-learn, XGBoost, Streamlit
+![AI Football Transfer Platform public product experience](assets/football-transfer-platform.png)
 
-### Retail Commercial Performance Dashboard
+## Engineering baseline
 
-[Source code](https://github.com/liyang6620/retail-commercial-performance-dashboard)
+The selected repositories include CI, setup and validation instructions,
+licensing, contribution guidance, security reporting and explicit limitations.
+Deployed demonstrations use free or tightly bounded infrastructure and should
+be evaluated as portfolio environments, not unrestricted commercial services.
 
-An interactive executive dashboard for sales, profitability, regional performance, discount effectiveness, Pareto analysis and margin monitoring.
-
-Technologies: Excel, Power Query, PivotTables, PivotCharts, commercial analytics
-
-### Hotel Booking Cancellation Analytics
-
-[Source code](https://github.com/liyang6620/hotel-booking-cancellation-analytics)
-
-A business analytics and predictive-modelling study of hotel cancellation behaviour, combining exploratory analysis, operational interpretation and model comparison.
-
-Technologies: Python, Pandas, Scikit-learn, XGBoost, business analytics
-
-### NZ Border Movements Dashboard
-
-[Source code](https://github.com/liyang6620/nz-border-movements-tableau)
-
-An interactive Tableau analysis of pre-COVID, COVID and post-COVID New Zealand border-movement patterns, including recovery indicators and drill-down filters.
-
-Technologies: Tableau, Stats NZ data, dashboard storytelling
-
-## Current Interests
+## Current interests
 
 - Data engineering and cloud data platforms
 - Full-stack software and AI-enabled products
-- Data analytics and business intelligence
 - Applied machine learning and explainable decision support
+- Data analytics and business intelligence
 
 ## Contact
 
